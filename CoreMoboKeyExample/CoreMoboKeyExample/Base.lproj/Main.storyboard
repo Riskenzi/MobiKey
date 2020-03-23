@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreMoboKeyExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLUETOOTH_STATUS_LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyg-NV-qkJ">
+                                <rect key="frame" x="94" y="54" width="226" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DxT-Om-f8b">
+                                <rect key="frame" x="83" y="98.5" width="248" height="32"/>
+                                <segments>
+                                    <segment title="Key Start"/>
+                                    <segment title="Push Start"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didTapCarTypeSelectionControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="6iS-12-Ctt"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current car type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qct-Rk-60L">
+                                <rect key="frame" x="83" y="78" width="118" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="erq-pv-6bV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAR_TYPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVu-Ev-oK3">
+                                <rect key="frame" x="201" y="78" width="130" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9R-Jg-mdH">
+                                <rect key="frame" x="161.5" y="199.5" width="91" height="30"/>
+                                <state key="normal" title="SmartKey On"/>
+                                <connections>
+                                    <action selector="didTapSmartKeyOnButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2q-CM-tfY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJP-Yl-ByI">
+                                <rect key="frame" x="160.5" y="249.5" width="93" height="30"/>
+                                <state key="normal" title="SmartKey Off"/>
+                                <connections>
+                                    <action selector="didTapSmartKeyOffButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="RGN-dl-GW7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9U-YM-5nK">
+                                <rect key="frame" x="179.5" y="299.5" width="55" height="30"/>
+                                <state key="normal" title="ACC On"/>
+                                <connections>
+                                    <action selector="didTapAccOnButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="RtL-3b-0ap"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-zx-AmI">
+                                <rect key="frame" x="178.5" y="349.5" width="57" height="30"/>
+                                <state key="normal" title="ACC Off"/>
+                                <connections>
+                                    <action selector="didTapAccOffButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="3cc-3p-MgP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COM-9a-zoD">
+                                <rect key="frame" x="173.5" y="399.5" width="67" height="30"/>
+                                <state key="normal" title="Power On"/>
+                                <connections>
+                                    <action selector="didTapPowerOnButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="c73-NX-fk3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97Y-7k-Xhr">
+                                <rect key="frame" x="172.5" y="449.5" width="69" height="30"/>
+                                <state key="normal" title="Power Off"/>
+                                <connections>
+                                    <action selector="didTapPowerOffButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="9e6-jd-MNY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ivh-gR-oik">
+                                <rect key="frame" x="191" y="549.5" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="didTapStopButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdp-YM-sMK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJb-Ip-Wcv">
+                                <rect key="frame" x="190" y="499.5" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="didTapStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="zc8-PJ-Ca1"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="hST-3S-cjv">
+                                <rect key="frame" x="127.5" y="149.5" width="159" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbi-xa-zzc">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="30"/>
+                                        <state key="normal" title="Lock"/>
+                                        <connections>
+                                            <action selector="didTapLockButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lwg-ra-z33"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ang-fU-Ewx">
+                                        <rect key="frame" x="111" y="0.0" width="48" height="30"/>
+                                        <state key="normal" title="Unlock"/>
+                                        <connections>
+                                            <action selector="didTapUnlockButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="x9o-zj-OIv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvI-Q9-KQP">
+                                <rect key="frame" x="176" y="599.5" width="62.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nk-AL-Cj2">
+                                <rect key="frame" x="350" y="349.5" width="44" height="30"/>
+                                <state key="normal" title="ACC S"/>
+                                <connections>
+                                    <action selector="didTapAccStatus" destination="BYZ-38-t0r" eventType="touchUpInside" id="FRb-Ad-1u9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrr-ab-4j4">
+                                <rect key="frame" x="20" y="349.5" width="46" height="30"/>
+                                <state key="normal" title="Lock S"/>
+                                <connections>
+                                    <action selector="didTapLockStatus" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2w-xv-hHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoO-Fz-gBJ">
+                                <rect key="frame" x="20" y="449.5" width="56" height="30"/>
+                                <state key="normal" title="Power S"/>
+                                <connections>
+                                    <action selector="didTapPowerStatus" destination="BYZ-38-t0r" eventType="touchUpInside" id="hD1-OY-qJv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ca-Mt-WHv">
+                                <rect key="frame" x="346" y="449.5" width="48" height="30"/>
+                                <state key="normal" title="Start S"/>
+                                <connections>
+                                    <action selector="didTapStartStatus" destination="BYZ-38-t0r" eventType="touchUpInside" id="ToT-pf-DK8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leM-2w-7aP">
+                                <rect key="frame" x="16" y="249.5" width="105" height="30"/>
+                                <state key="normal" title="Change Master"/>
+                                <connections>
+                                    <action selector="changeMasterKey" destination="BYZ-38-t0r" eventType="touchUpInside" id="L8p-6n-cMR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLY-rY-mFd">
+                                <rect key="frame" x="288" y="249.5" width="110" height="30"/>
+                                <state key="normal" title="Change Regular"/>
+                                <connections>
+                                    <action selector="changeRegularKey" destination="BYZ-38-t0r" eventType="touchUpInside" id="cf2-48-hz5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bJP-Yl-ByI" firstAttribute="top" secondItem="m9R-Jg-mdH" secondAttribute="bottom" constant="20" id="3So-Eb-mbp"/>
+                            <constraint firstItem="EVu-Ev-oK3" firstAttribute="trailing" secondItem="DxT-Om-f8b" secondAttribute="trailing" id="5XD-tf-uFU"/>
+                            <constraint firstItem="97Y-7k-Xhr" firstAttribute="centerY" secondItem="2Ca-Mt-WHv" secondAttribute="centerY" id="68d-m9-5Mu"/>
+                            <constraint firstItem="bJP-Yl-ByI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6HH-rF-qly"/>
+                            <constraint firstItem="COM-9a-zoD" firstAttribute="top" secondItem="nIJ-zx-AmI" secondAttribute="bottom" constant="20" id="7Ce-eR-pgF"/>
+                            <constraint firstItem="Tyg-NV-qkJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="85g-ef-he9"/>
+                            <constraint firstItem="Q9U-YM-5nK" firstAttribute="top" secondItem="bJP-Yl-ByI" secondAttribute="bottom" constant="20" id="CTf-gq-Tum"/>
+                            <constraint firstItem="leM-2w-7aP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ee0-BN-7xm"/>
+                            <constraint firstItem="vrr-ab-4j4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Fhq-Jx-Zs8"/>
+                            <constraint firstItem="vrr-ab-4j4" firstAttribute="centerY" secondItem="nIJ-zx-AmI" secondAttribute="centerY" id="IkY-k8-dBq"/>
+                            <constraint firstItem="Ivh-gR-oik" firstAttribute="top" secondItem="PJb-Ip-Wcv" secondAttribute="bottom" constant="20" id="K84-Yh-uxW"/>
+                            <constraint firstItem="PJb-Ip-Wcv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KNB-5B-N2r"/>
+                            <constraint firstItem="qct-Rk-60L" firstAttribute="leading" secondItem="DxT-Om-f8b" secondAttribute="leading" id="LHH-0R-SYe"/>
+                            <constraint firstItem="nIJ-zx-AmI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mvo-Ak-LMA"/>
+                            <constraint firstItem="DxT-Om-f8b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PrL-F2-AEp"/>
+                            <constraint firstItem="fLY-rY-mFd" firstAttribute="centerY" secondItem="bJP-Yl-ByI" secondAttribute="centerY" id="SCb-6Q-VzG"/>
+                            <constraint firstItem="GoO-Fz-gBJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SHb-a6-ubw"/>
+                            <constraint firstItem="1nk-AL-Cj2" firstAttribute="centerY" secondItem="nIJ-zx-AmI" secondAttribute="centerY" id="TWb-s1-PCQ"/>
+                            <constraint firstItem="EVu-Ev-oK3" firstAttribute="leading" secondItem="qct-Rk-60L" secondAttribute="trailing" id="V8H-AS-DtD"/>
+                            <constraint firstItem="DxT-Om-f8b" firstAttribute="top" secondItem="Tyg-NV-qkJ" secondAttribute="bottom" constant="24" id="W6Z-zh-K1U"/>
+                            <constraint firstItem="dvI-Q9-KQP" firstAttribute="top" secondItem="Ivh-gR-oik" secondAttribute="bottom" constant="20" id="XAR-ZR-5q0"/>
+                            <constraint firstItem="Tyg-NV-qkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="YUv-Fr-bYJ"/>
+                            <constraint firstItem="leM-2w-7aP" firstAttribute="centerY" secondItem="bJP-Yl-ByI" secondAttribute="centerY" id="YUw-na-MsW"/>
+                            <constraint firstItem="m9R-Jg-mdH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yyr-A0-nrZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1nk-AL-Cj2" secondAttribute="trailing" constant="20" id="a3I-AM-vYd"/>
+                            <constraint firstItem="dvI-Q9-KQP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b1s-mQ-WND"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Ca-Mt-WHv" secondAttribute="trailing" constant="20" id="bKK-fm-wIw"/>
+                            <constraint firstItem="97Y-7k-Xhr" firstAttribute="centerY" secondItem="GoO-Fz-gBJ" secondAttribute="centerY" id="fzm-Wj-tJ7"/>
+                            <constraint firstItem="nIJ-zx-AmI" firstAttribute="top" secondItem="Q9U-YM-5nK" secondAttribute="bottom" constant="20" id="gAn-wS-T0L"/>
+                            <constraint firstItem="DxT-Om-f8b" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="hdv-Hl-QCj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fLY-rY-mFd" secondAttribute="trailing" constant="16" id="i8i-re-p99"/>
+                            <constraint firstItem="97Y-7k-Xhr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pub-t3-8MV"/>
+                            <constraint firstItem="hST-3S-cjv" firstAttribute="top" secondItem="DxT-Om-f8b" secondAttribute="bottom" constant="20" id="s1H-lH-woL"/>
+                            <constraint firstItem="DxT-Om-f8b" firstAttribute="top" secondItem="qct-Rk-60L" secondAttribute="bottom" constant="2.5" id="sEQ-uY-dOY"/>
+                            <constraint firstItem="Q9U-YM-5nK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sVz-fM-8Jt"/>
+                            <constraint firstItem="97Y-7k-Xhr" firstAttribute="top" secondItem="COM-9a-zoD" secondAttribute="bottom" constant="20" id="skt-j9-tKC"/>
+                            <constraint firstItem="hST-3S-cjv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v4H-yF-SwI"/>
+                            <constraint firstItem="PJb-Ip-Wcv" firstAttribute="top" secondItem="97Y-7k-Xhr" secondAttribute="bottom" constant="20" id="wFG-YD-Ofr"/>
+                            <constraint firstItem="COM-9a-zoD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yPa-L3-R82"/>
+                            <constraint firstItem="m9R-Jg-mdH" firstAttribute="top" secondItem="hST-3S-cjv" secondAttribute="bottom" constant="20" id="yUf-Ja-Asy"/>
+                            <constraint firstItem="qct-Rk-60L" firstAttribute="centerY" secondItem="EVu-Ev-oK3" secondAttribute="centerY" id="yn9-ZB-BxE"/>
+                            <constraint firstItem="Ivh-gR-oik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z9T-Tc-YJw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="accOffButton" destination="nIJ-zx-AmI" id="uJI-bt-2fs"/>
+                        <outlet property="accOnButton" destination="Q9U-YM-5nK" id="307-xT-I9h"/>
+                        <outlet property="bluetoothStatusLabel" destination="Tyg-NV-qkJ" id="utb-ik-yaK"/>
+                        <outlet property="carTypeLabel" destination="EVu-Ev-oK3" id="GzY-u7-0Ve"/>
+                        <outlet property="carTypeSegmentedControl" destination="DxT-Om-f8b" id="dlN-Ct-zle"/>
+                        <outlet property="lockButton" destination="Kbi-xa-zzc" id="9ps-0i-eXu"/>
+                        <outlet property="powerOffButton" destination="97Y-7k-Xhr" id="7SR-La-qpp"/>
+                        <outlet property="powerOnButton" destination="COM-9a-zoD" id="PT1-sv-SEQ"/>
+                        <outlet property="smartKeyOffButton" destination="bJP-Yl-ByI" id="1qa-iB-pgN"/>
+                        <outlet property="smartKeyOnButton" destination="m9R-Jg-mdH" id="oKs-hB-FMR"/>
+                        <outlet property="startButton" destination="PJb-Ip-Wcv" id="7vR-Ik-ESE"/>
+                        <outlet property="statusLabel" destination="dvI-Q9-KQP" id="kdd-iG-pgR"/>
+                        <outlet property="stopButton" destination="Ivh-gR-oik" id="gHS-mX-RxY"/>
+                        <outlet property="unlockButton" destination="ang-fU-Ewx" id="bfC-Uf-5hN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+</document>

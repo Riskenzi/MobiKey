@@ -1,0 +1,106 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name CoreMoboKey
+import CoreBluetooth
+@_exported import CoreMoboKey
+import Swift
+import UIKit
+public protocol MKHandlerDelegate : AnyObject {
+  func bluetoothIsOff()
+  func isReadyForScan()
+  func didDisconnect()
+  func didUnlock()
+  func didLock()
+  func accIsOn(error: Foundation.NSError?)
+  func accIsOff()
+  func powerIsOn(error: Foundation.NSError?)
+  func powerIsOff()
+  func didFailToConnect()
+  func didFailToCommunicate(error: Swift.Error)
+  func masterKeyVerified()
+  func bluetoothUnauthorized()
+  func masterKeyRequired()
+  func masterKeyWasInvalid()
+  func didStart(error: Foundation.NSError?)
+  func didStop()
+  func smartKeyIsEnabled()
+  func smartKeyIsDisabled()
+  func didChangeCarType(type: CoreMoboKey.CarType)
+  func didDiscoverNewDevice(_ device: CoreMoboKey.MoboKey)
+  func didFailToPerformAction()
+  func didChangeMasterKey(error: CoreMoboKey.MKError?)
+  func didChangeRegularKey(error: CoreMoboKey.MKError?)
+  func didVerifyRegularKey(error: CoreMoboKey.MKError?)
+  func regularKeyVerified()
+  func regularKeyWasInvalid()
+  func regularKeyRequired()
+}
+@objc final public class MKHandler : ObjectiveC.NSObject, CoreBluetooth.CBCentralManagerDelegate, CoreBluetooth.CBPeripheralDelegate {
+  final public var isReady: Swift.Bool {
+    get
+  }
+  public init(delegate: CoreMoboKey.MKHandlerDelegate)
+  final public func getIdentifier() -> Foundation.UUID?
+  final public func getMACAddress() -> Swift.String?
+  final public func startScan(forTimeInSeconds seconds: Swift.Int)
+  @objc final public func stopScan()
+  final public func connectToMoboKey(_ device: CoreMoboKey.MoboKey)
+  final public func disconnect()
+  final public func getCurrentState()
+  final public func getCurrentCarType()
+  final public func changeRegularKey(currentMasterKey currentMaster: Swift.String, newKey new: Swift.String)
+  final public func changeMasterKey(currentMasterKey currentMaster: Swift.String, newKey new: Swift.String)
+  final public func getCurrentLockState(_ completion: @escaping (Swift.Bool?, CoreMoboKey.MKError?) -> ())
+  final public func getCurrentAccState(_ completion: @escaping (Swift.Bool?, CoreMoboKey.MKError?) -> ())
+  final public func getCurrentPowerState(_ completion: @escaping (Swift.Bool?, CoreMoboKey.MKError?) -> ())
+  final public func getCurrentStartState(_ completion: @escaping (Swift.Bool?, CoreMoboKey.MKError?) -> ())
+  final public func getCurrentSmartKeyState(_ completion: @escaping (Swift.Bool?, CoreMoboKey.MKError?) -> ())
+  @objc final public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDiscover peripheral: CoreBluetooth.CBPeripheral, advertisementData: [Swift.String : Any], rssi RSSI: Foundation.NSNumber)
+  @objc final public func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
+  @objc final public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDisconnectPeripheral peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc final public func centralManager(_ central: CoreBluetooth.CBCentralManager, didFailToConnect peripheral: CoreBluetooth.CBPeripheral, error: Swift.Error?)
+  @objc final public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+  final public func lock()
+  final public func unlock()
+  final public func accOn()
+  final public func accOff()
+  final public func powerOn()
+  final public func powerOff()
+  final public func smartKeyOn()
+  final public func smartKeyOff()
+  final public func start()
+  final public func stop()
+  @objc final public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices error: Swift.Error?)
+  final public func changeCarType(type: CoreMoboKey.CarType)
+  @objc final public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error: Swift.Error?)
+  @objc final public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didWriteValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  @objc final public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: Swift.Error?)
+  final public func verifyMasterKey(_ key: Swift.String)
+  final public func verifyRegularKey(_ key: Swift.String)
+  @objc final public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didReadRSSI RSSI: Foundation.NSNumber, error: Swift.Error?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum CarType {
+  case keyStart
+  case pushStart
+  public static func == (a: CoreMoboKey.CarType, b: CoreMoboKey.CarType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum MKError {
+  case notConnected
+  case invalidKeyLength
+  case invalidMasterKey
+  public static func == (a: CoreMoboKey.MKError, b: CoreMoboKey.MKError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct MoboKey {
+  public var id: Foundation.UUID
+  public var mac: Swift.String
+}

@@ -1,0 +1,11 @@
+framework module CoreMoboKey {
+  umbrella header "CoreMoboKey.h"
+
+  export *
+  module * { export * }
+}
+
+module CoreMoboKey.Swift {
+    header "CoreMoboKey-Swift.h"
+    requires objc
+}
