@@ -192,9 +192,10 @@ class ViewController: UIViewController, MKHandlerDelegate {
     func didDiscoverNewDevice(_ device: MoboKey) {
         print("New device: \(device.mac)")
         //20:91:48:2D:63:F4
-        if device.mac == "20:91:48:2D:63:F4"{
-            moboKey.connectToMoboKey(device)
-        }
+//        if device.mac == "20:91:48:2D:63:F4"{
+//            moboKey.connectToMoboKey(device)
+//        }
+        moboKey.connectToMoboKey(device)
     }
     
     //Once you recieve this call, you can now call, lock/unlock.
